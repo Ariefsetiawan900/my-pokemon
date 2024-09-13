@@ -1,12 +1,8 @@
-<h4 align="center">
-  <img src="https://github.com/gabriel-nt/pokedex/blob/main/src/assets/logo.png" alt="logo" height="130"/>
-</h4>
-
 <h1 align="center">
     🚀 My Pokemon
 </h1>
+<p align="center">Application developed with the Pokedéx API, <a href="https://my-pokemon-five-xi.vercel.app/">Link Demo</a> </p>
 
-<p align="center">Application developed with the Pokedéx API, [Link Demo](https://my-pokemon-five-xi.vercel.app/)</p>
 
 
 <p align="center">
