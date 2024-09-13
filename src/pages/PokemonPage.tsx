@@ -50,16 +50,16 @@ const PokemonPage = () => {
   const [pokemon, setPokemon] = useState<Pokemon>();
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
-  const [, setIsFavorite] = useState<boolean>(false);
+  const [, setIsPokedex] = useState<boolean>(false);
 
-  // Check if pokemon is in favorites
+  // Check if pokemon is in Pokedex
   useEffect(() => {
-    const favorites = localStorage.getItem("favorites");
-    if (favorites) {
-      const favoritesArr = JSON.parse(favorites);
+    const Pokedex = localStorage.getItem("Pokedex");
+    if (Pokedex) {
+      const pokedexArr = JSON.parse(Pokedex);
       if (name) {
-        if (favoritesArr.includes(name)) {
-          setIsFavorite(true);
+        if (pokedexArr.includes(name)) {
+          setIsPokedex(true);
         }
       }
     }
@@ -83,30 +83,30 @@ const PokemonPage = () => {
     fetchPokemon();
   }, [name]);
 
-  const handleAddToFavorites = () => {
-    const favorites = localStorage.getItem("favorites");
-    if (favorites) {
-      const favoritesArr: string[] = JSON.parse(favorites);
+  const handleAddToPokedex = () => {
+    const pokedex = localStorage.getItem("pokedex");
+    if (pokedex) {
+      const pokedexArr: string[] = JSON.parse(pokedex);
       if (name) {
-        if (favoritesArr.includes(name)) {
-          // Remove pokemon from favorites
-          const updatedFavorites = favoritesArr.filter(
+        if (pokedexArr.includes(name)) {
+          // Remove pokemon from pokedex
+          const updatedPokedex = pokedexArr.filter(
             (fav: string) => fav !== name
           );
-          localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-          setIsFavorite(false);
+          localStorage.setItem("pokedex", JSON.stringify(updatedPokedex));
+          setIsPokedex(false);
         } else {
-          // Add pokemon to favorites
-          favoritesArr.push(name);
-          localStorage.setItem("favorites", JSON.stringify(favoritesArr));
-          setIsFavorite(true);
+          // Add pokemon to pokedex
+          pokedexArr.push(name);
+          localStorage.setItem("pokedex", JSON.stringify(pokedexArr));
+          setIsPokedex(true);
         }
       }
     } else {
       if (name) {
-        // Add pokemon to favorites
-        localStorage.setItem("favorites", JSON.stringify([name]));
-        setIsFavorite(true);
+        // Add pokemon to pokedex
+        localStorage.setItem("pokedex", JSON.stringify([name]));
+        setIsPokedex(true);
       }
     }
   };
@@ -195,17 +195,17 @@ const PokemonPage = () => {
       )}
 
       <>
-        {localStorage.getItem("favorites")?.includes(name || "") ? (
+        {localStorage.getItem("pokedex")?.includes(name || "") ? (
           <div
             className="bg-gradient-to-r from-ctp-pink to-ctp-mauve px-4 py-2 text-xl rounded-xl dark:text-white text-black fixed right-5 bottom-5 hover:-translate-y-2 transition-all ease-in-out duration-300 cursor-pointer"
-            onClick={handleAddToFavorites}
+            onClick={handleAddToPokedex}
           >
             Remove from Pokedex 🗑️
           </div>
         ) : (
           <div
             className="bg-gradient-to-r from-ctp-pink to-ctp-mauve px-4 py-2 text-xl rounded-xl dark:text-white text-black fixed right-5 bottom-5 hover:-translate-y-2 transition-all ease-in-out duration-300 cursor-pointer"
-            onClick={handleAddToFavorites}
+            onClick={handleAddToPokedex}
           >
             Add to Pokedex 🎴
           </div>

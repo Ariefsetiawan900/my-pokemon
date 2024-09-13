@@ -15,7 +15,7 @@ const Header = () => {
 
         <div className="flex items-center justify-end gap-6 md:flex-col bg-ctp-overlay0/50 md:w-16 p-4 h-16 md:h-[50vh] rounded-xl">
           <NavLink
-            to="/favorites"
+            to="/pokedex"
             className={({ isActive }) =>
               isActive
                 ? "text-3xl text-ctp-yellow hover:text-yellow-400 transition-all ease-in-out duration-300"

@@ -6,7 +6,7 @@ import Layout from "./components/layout/Layout";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 const PokemonPage = lazy(() => import("./pages/PokemonPage"));
-const FavoritePage = lazy(() => import("./pages/FavoritePage"));
+const PokedexPage = lazy(() => import("./pages/PokedexPage"));
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/pokemon/:name" element={<PokemonPage />} />
-            <Route path="/favorites" element={<FavoritePage />} />
+            <Route path="/pokedex" element={<PokedexPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

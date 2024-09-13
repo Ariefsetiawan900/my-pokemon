@@ -4,17 +4,17 @@ import PokemonCard from "../components/PokemonCard";
 import Loading from "../components/Loading";
 import TextHeading from "../components/TextHeading";
 
-const FavoritePage = () => {
+const PokedexPage = () => {
   const [pokemonList, setPokemonList] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
-    const fetchFavoritePokemon = () => {
-      const storedFavorites = localStorage.getItem("favorites");
-      if (storedFavorites) {
-        const favorites: string[] = JSON.parse(storedFavorites);
-        setPokemonList(favorites);
+    const fetchPokedexPokemon = () => {
+      const storedPokedex = localStorage.getItem("pokedex");
+      if (storedPokedex) {
+        const pokedex: string[] = JSON.parse(storedPokedex);
+        setPokemonList(pokedex);
         setLoading(false);
         setError(false);
       } else {
@@ -24,7 +24,7 @@ const FavoritePage = () => {
       }
     };
 
-    fetchFavoritePokemon();
+    fetchPokedexPokemon();
   }, []);
 
   return (
@@ -62,4 +62,4 @@ const FavoritePage = () => {
   );
 };
 
-export default FavoritePage;
+export default PokedexPage;
