@@ -114,7 +114,7 @@ const HomePage: React.FC = () => {
           }
           ref={inputRef}
         />
-        <button className="bg-gradient-to-r from-ctp-pink to-ctp-mauve w-10 h-10 text-xl text-white flex items-center justify-center rounded-lg">
+        <button className="bg-gradient-to-r from-ctp-blue to-ctp-mauve w-10 h-10 text-xl text-white flex items-center justify-center rounded-lg">
           <BiSearchAlt />
         </button>
       </div>
