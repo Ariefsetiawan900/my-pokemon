@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback, ChangeEvent } from "react";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  ChangeEvent,
+  useRef,
+} from "react";
 import { PokemonList } from "../types";
 import { getPokemonList } from "../api/pokemonServices";
 import PokemonCard from "../components/PokemonCard";
@@ -15,7 +21,7 @@ const HomePage: React.FC = () => {
   const [pokemonList, setPokemonList] = useState<PokemonList[]>([]);
   const [search, setSearch] = useState<string>("");
 
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (inputRef.current) {
@@ -95,7 +101,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="w-full px-3 md:px-10">
       <div className="text-center pt-[100px] md:py-[50px]">
-        <TextHeading text="PokéDex!" />
+        <TextHeading text="My Pokemon" />
       </div>
       <div className="flex items-center justify-end gap-3 my-5">
         <input

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import { getPokemonByName } from "../api/pokemonServices";
@@ -47,13 +47,13 @@ interface Pokemon {
 const PokemonPage = () => {
   const { name } = useParams<{ name?: string }>();
 
-  const [pokemon, setPokemon] = React.useState<Pokemon>();
-  const [loading, setLoading] = React.useState<boolean>(true);
-  const [error, setError] = React.useState<boolean>(false);
-  const [, setIsFavorite] = React.useState<boolean>(false);
+  const [pokemon, setPokemon] = useState<Pokemon>();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
+  const [, setIsFavorite] = useState<boolean>(false);
 
   // Check if pokemon is in favorites
-  React.useEffect(() => {
+  useEffect(() => {
     const favorites = localStorage.getItem("favorites");
     if (favorites) {
       const favoritesArr = JSON.parse(favorites);
@@ -65,7 +65,7 @@ const PokemonPage = () => {
     }
   }, [name]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchPokemon = async () => {
       try {
         setLoading(true);
@@ -128,10 +128,10 @@ const PokemonPage = () => {
           <div className="flex items-center justify-center gap-10 flex-col md:flex-row">
             <div className="bg-gradient-to-b from-ctp-mantle to-ctp-crust flex flex-col items-center p-5 rounded-3xl">
               <div className="">
-                {pokemon && pokemon.id && (
+                {pokemon && pokemon?.id && (
                   <img
-                    src={apiConfig.gifUrl(pokemon.id)}
-                    alt={pokemon.name}
+                    src={apiConfig.gifUrl(pokemon?.id)}
+                    alt={pokemon?.name}
                     className="h-[300px]"
                   />
                 )}
@@ -139,15 +139,15 @@ const PokemonPage = () => {
               <div className="">
                 <div className="flex items-center gap-4 mt-4">
                   {pokemon?.types.map((type) => (
-                    <TypeTag key={type.type.name} type={type.type.name} />
+                    <TypeTag key={type?.type?.name} type={type?.type?.name} />
                   ))}
                 </div>
                 <div className="flex items-center gap-2 mt-4">
                   {pokemon?.stats.map((stat) => (
                     <StatTag
-                      key={stat.stat.name}
-                      stat_name={stat.stat.name}
-                      base_stat={stat.base_stat}
+                      key={stat?.stat?.name}
+                      stat_name={stat?.stat?.name}
+                      base_stat={stat?.base_stat}
                     />
                   ))}
                 </div>
@@ -157,17 +157,17 @@ const PokemonPage = () => {
             <div className="bg-gradient-to-t md:bg-gradient-to-b from-ctp-mantle to-ctp-crust flex flex-col items-center p-10 md:p-5 rounded-3xl">
               <div className="">
                 {/* evolution */}
-                {pokemon?.id && <EvolutionCard id={pokemon.id} />}
+                {pokemon?.id && <EvolutionCard id={pokemon?.id} />}
               </div>
               <div className="mt-7">
                 {/* sprites */}
-                {pokemon?.sprites.back_default &&
-                  pokemon.sprites.back_shiny &&
-                  pokemon.sprites.front_default &&
-                  pokemon.sprites.front_shiny && (
+                {pokemon?.sprites?.back_default &&
+                  pokemon?.sprites?.back_shiny &&
+                  pokemon?.sprites?.front_default &&
+                  pokemon?.sprites?.front_shiny && (
                     <div className="flex items-center gap-0 md:gap-4 mt-4 flex-col md:flex-row">
                       <img
-                        src={pokemon?.sprites.back_default}
+                        src={pokemon?.sprites?.back_default}
                         alt={pokemon?.name}
                         className="h-[300px]"
                       />
@@ -200,14 +200,14 @@ const PokemonPage = () => {
             className="bg-gradient-to-r from-ctp-pink to-ctp-mauve px-4 py-2 text-xl rounded-xl dark:text-white text-black fixed right-5 bottom-5 hover:-translate-y-2 transition-all ease-in-out duration-300 cursor-pointer"
             onClick={handleAddToFavorites}
           >
-            Remove from favorites 🌟
+            Remove from Pokedex 🗑️
           </div>
         ) : (
           <div
             className="bg-gradient-to-r from-ctp-pink to-ctp-mauve px-4 py-2 text-xl rounded-xl dark:text-white text-black fixed right-5 bottom-5 hover:-translate-y-2 transition-all ease-in-out duration-300 cursor-pointer"
             onClick={handleAddToFavorites}
           >
-            Add to favorites 🌟
+            Add to Pokedex 🎴
           </div>
         )}
       </>

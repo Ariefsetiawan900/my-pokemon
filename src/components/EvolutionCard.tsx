@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { getPokemonSpecies } from "../api/pokemonServices";
 import apiConfig from "../api/apiConfig";
 import { EvolutionData } from "../types";
@@ -9,10 +9,15 @@ interface EvolutionProps {
   id: number;
 }
 
-const EvolutionCard = ({ id }: EvolutionProps) => {
-  const [evolution, setEvolution] = React.useState<any>();
+interface IEvelutionState {
+  id: string;
+  name: string;
+}
 
-  React.useEffect(() => {
+const EvolutionCard = ({ id }: EvolutionProps) => {
+  const [evolution, setEvolution] = useState<IEvelutionState[]>();
+
+  useEffect(() => {
     const fetchEvolution = async () => {
       const speciesResponse = await getPokemonSpecies(id);
       const evolutionURL = speciesResponse.data.evolution_chain.url;

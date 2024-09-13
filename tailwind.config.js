@@ -1,10 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const assets = require('./assets.json')
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    // "./src/components/**/*.{js,ts,jsx,tsx",
   ],
   theme: {
     extend: {

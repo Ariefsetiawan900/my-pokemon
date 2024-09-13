@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { getPokemonByName } from "../api/pokemonServices";
 import { Link } from "react-router-dom";
 
@@ -15,9 +15,9 @@ interface Pokemon {
 }
 
 const PokemonCard = ({ name }: PokemonCardProps) => {
-  const [pokemon, setPokemon] = React.useState<Pokemon>();
+  const [pokemon, setPokemon] = useState<Pokemon>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     try {
       const fetchPokemon = async () => {
         const response = await getPokemonByName(name);

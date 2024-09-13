@@ -32,7 +32,7 @@ const FavoritePage = () => {
       <Header />
       <div className="w-full px-3 md:px-10">
         <div className="text-center pt-[100px] pb-[50px] md:py-[50px]">
-          <TextHeading text="Favorite Pokémon" />
+          <TextHeading text="My Pokedex" />
         </div>
       </div>
       {loading && (
@@ -51,7 +51,7 @@ const FavoritePage = () => {
             ) : (
               <div className="h-[50vh] w-full flex items-center justify-center">
                 <p className="bg-gradient-to-r from-ctp-pink to-ctp-mauve text-transparent bg-clip-text text-2xl">
-                  No favorite pokemon
+                  Pokedex empty
                 </p>
               </div>
             )}
