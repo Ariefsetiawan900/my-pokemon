@@ -75,6 +75,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     fetchPokemonList(limit, offset);
+    document.title = "My Pokemon";
   }, [offset, limit, fetchPokemonList]);
 
   useEffect(() => {

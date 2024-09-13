@@ -46,7 +46,6 @@ interface Pokemon {
 
 const PokemonPage = () => {
   const { name } = useParams<{ name?: string }>();
-
   const [pokemon, setPokemon] = useState<Pokemon>();
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
@@ -66,6 +65,7 @@ const PokemonPage = () => {
   }, [name]);
 
   useEffect(() => {
+    document.title = "My Pokemon -" + name;
     const fetchPokemon = async () => {
       try {
         setLoading(true);
@@ -79,7 +79,6 @@ const PokemonPage = () => {
         setLoading(false);
       }
     };
-
     fetchPokemon();
   }, [name]);
 

@@ -23,7 +23,7 @@ const PokedexPage = () => {
         setError(false);
       }
     };
-
+    document.title = "My Pokedex";
     fetchPokedexPokemon();
   }, []);
 
