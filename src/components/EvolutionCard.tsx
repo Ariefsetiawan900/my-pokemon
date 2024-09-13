@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getPokemonSpecies } from "../api/pokemonServices";
 import apiConfig from "../api/apiConfig";
 import { EvolutionData } from "../types";
@@ -10,7 +10,7 @@ interface EvolutionProps {
 }
 
 interface IEvelutionState {
-  id: string;
+  id: number;
   name: string;
 }
 

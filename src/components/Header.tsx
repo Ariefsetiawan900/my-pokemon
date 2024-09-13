@@ -1,6 +1,6 @@
 import useDarkMode from "../hooks/useDarkMode";
 import { Link, NavLink } from "react-router-dom";
-import { RiMoonClearFill, RiSunFill, RiGithubLine } from "react-icons/ri";
+import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
 import { TiStarFullOutline } from "react-icons/ti";
 import PokeBallPic from "/public/Poké_Ball_icon.png";
 

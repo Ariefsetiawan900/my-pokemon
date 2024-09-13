@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import { getPokemonByName } from "../api/pokemonServices";

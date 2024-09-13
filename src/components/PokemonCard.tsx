@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getPokemonByName } from "../api/pokemonServices";
 import { Link } from "react-router-dom";
 
