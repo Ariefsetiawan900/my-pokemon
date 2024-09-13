@@ -1,50 +1,83 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">
+    🚀 My Pokemon
+</h1>
 
-Currently, two official plugins are available:
+<p align="center">Application developed with the Pokedéx API</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<p align="center">
+  <a href="#-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Prerequisites">Prerequisites</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
 
-- Configure the top-level `parserOptions` property like this:
+<h3 align="center"> 
+🚧  In Development  🚧
+</h3>
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 📎 Features 
+
+- [x] Pokemon List
+- [x] Pokemon Detail
+- [x] Pokemon Evolution
+- [x] Search for Pokemon Name
+- [x] Add Pokemon to Pokedex
+
+### 💻 Project
+This web application has been developed using React.js, Vite, and TypeScript, with styling provided by Tailwind CSS. The project leverages the PokeAPI to enable functionalities such as searching for Pokémon by name, presenting a comprehensive list of Pokémon, illustrating Pokémon evolution, and facilitating the saving of Pokémon to a personal Pokedex.. 
+
+### ✅ Demonstration
+<img src="https://github.com/user-attachments/assets/1797254a-dce1-4d1f-a77b-372ba1b71be8" alt="pic 1"/>
+<br/>
+<img src="https://github.com/user-attachments/assets/2702c80c-0162-4292-8de4-fed793997768" alt="pic 2"/>
+<br/>
+<img src="https://github.com/user-attachments/assets/ec2b16e6-148b-4892-a549-e181529a53be" alt="pic 3"/>
+
+### ⚙ Prerequisites
+
+Project Before you start, you will need to have the following tools installed on your PC/Laptop:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) and/or [Yarn](https://yarnpkg.com/).
+In addition, it is good to have an editor to work with the code such as [VSCode](https://code.visualstudio.com/)
+
+### 📗Running the Application (web)
+
+```bash
+# Clone this repository
+$ git clone https://github.com/Ariefsetiawan900/my-pokemon.git
+
+# Install dependencies
+$ cd my-pokemon
+
+# Install dependencies
+$ yarn or npm install
+
+# Run the application
+$ yarn dev or npm run dev
+
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 🚀 Technologies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+This project was developed with the following technologies:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- ReactJS with Vite
+- Typescript
+
+### 📕 Libraries
+
+This project used the following libs:
+
+- tailwind
+- lodash
+- react-icons
+- react-router-dom
+- axios
+
+
+
+
+<hr/>
+
+Arief Setiawan
